@@ -129,7 +129,10 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          color: Colors.teal,
+          image: DecorationImage(
+            image: AssetImage(_getPlaylistImage(title)),
+            fit: BoxFit.cover,
+          ),
         ),
         child: Row(
           children: [
@@ -140,5 +143,20 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+String _getPlaylistImage(String playlistName) {
+  switch (playlistName) {
+    case 'Chill Hits':
+      return 'assets/chill_hits.jpg';
+    case 'Workout Mix':
+      return 'assets/workout_mix.jpg';
+    case 'Top 50':
+      return 'assets/top_50.jpg';
+    case 'Focus Music':
+      return 'assets/focus_music.jpg';
+    default:
+      return 'assets/chill_hits.jpg';
   }
 }

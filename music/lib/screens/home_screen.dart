@@ -93,7 +93,7 @@ class HomeScreen extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (_) => const PlayerScreen()),
+          MaterialPageRoute(builder: (_) => PlayerScreen(songTitle: title)),
         );
       },
       child: Container(
@@ -103,7 +103,13 @@ class HomeScreen extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           color: Colors.deepPurple,
         ),
-        child: Center(child: Text(title, textAlign: TextAlign.center)),
+        child: Center(
+          child: Text(
+            title,
+            textAlign: TextAlign.center,
+            style: const TextStyle(fontSize: 16),
+          ),
+        ),
       ),
     );
   }

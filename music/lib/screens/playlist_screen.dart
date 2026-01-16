@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:music/player_screen.dart';
+import 'player_screen.dart';
 
 class PlaylistScreen extends StatelessWidget {
   const PlaylistScreen({super.key});
@@ -20,7 +20,9 @@ class PlaylistScreen extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (_) => const PlayerScreen()),
+                MaterialPageRoute(
+                  builder: (_) => const PlayerScreen(songTitle: ''),
+                ),
               );
             },
           );

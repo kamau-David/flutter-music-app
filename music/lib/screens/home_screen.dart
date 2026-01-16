@@ -119,7 +119,9 @@ class HomeScreen extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (_) => const PlaylistScreen()),
+          MaterialPageRoute(
+            builder: (_) => PlaylistScreen(playlistName: title),
+          ),
         );
       },
       child: Container(
